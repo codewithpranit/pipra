@@ -17,18 +17,18 @@ const FOUNDER: TeamMember = {
   linkedin: "https://www.linkedin.com/in/sansjeev/",
 };
 
-const FOUNDING_TEAM: TeamMember[] = [
-  {
-    name: "Yashaswini Mohanty",
-    role: "Founding Team",
-    image: "/images/team/yashaswini-mohanty.png",
-    linkedin: "https://www.linkedin.com/in/yashaswinimohanty/",
-  },
+const FOUNDING_TEAM = [
   {
     name: "Astitva Tiwari",
     role: "Founding Team",
     image: "/images/team/astitva-tiwari.png",
     linkedin: "https://www.linkedin.com/in/astitva-tiwari-960185371/",
+  },
+  {
+    name: "Chef Vijay",
+    role: "Founding Team",
+    image: "/images/team/chef-vijay.jpg",
+    linkedin: "",
   },
 ];
 
@@ -129,10 +129,10 @@ export default function FoundingTeamSection() {
         </div>
 
         {/* Founding team row */}
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-[720px] mx-auto">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-[1080px] mx-auto">
           {FOUNDING_TEAM.map((member) => (
             <StaggerItem key={member.name}>
-              <div className="group relative glass-card p-5 sm:p-7 text-center flex flex-col items-center hover:bg-white/12 transition-smooth shadow-lg overflow-hidden">
+              <div className="group relative glass-card p-5 sm:p-7 text-center flex flex-col items-center hover:bg-white/12 transition-smooth shadow-lg overflow-hidden h-full">
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
                 {/* Portrait */}
@@ -156,21 +156,51 @@ export default function FoundingTeamSection() {
                   {member.role}
                 </p>
 
-                <div className="pt-3.5 border-t border-white/10 w-full flex items-center justify-center">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-white/40 hover:text-white transition-smooth group/link"
-                    aria-label={`${member.name} on LinkedIn`}
-                  >
-                    <span>LinkedIn</span>
-                    <span className="text-[10px] transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" aria-hidden="true">↗</span>
-                  </a>
-                </div>
+                {member.linkedin && (
+                  <div className="pt-3.5 border-t border-white/10 w-full flex items-center justify-center mt-auto">
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-white/40 hover:text-white transition-smooth group/link"
+                      aria-label={`${member.name} on LinkedIn`}
+                    >
+                      <span>LinkedIn</span>
+                      <span className="text-[10px] transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                )}
               </div>
             </StaggerItem>
           ))}
+
+          {/* More to Come card */}
+          <StaggerItem>
+            <div className="group relative text-center flex flex-col items-center justify-center h-full min-h-[320px] sm:min-h-[360px] rounded-2xl border border-dashed border-white/20 hover:border-blue-400/50 bg-white/[0.03] hover:bg-white/[0.07] transition-smooth overflow-hidden">
+              {/* Subtle top glow line */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
+
+              {/* Animated ring icon */}
+              <div className="relative mb-6">
+                <div className="w-16 h-16 rounded-full border border-white/15 bg-white/5 flex items-center justify-center group-hover:border-blue-400/40 transition-smooth">
+                  <div className="absolute w-16 h-16 rounded-full border border-blue-400/20 animate-ping opacity-0 group-hover:opacity-100" />
+                  <svg className="w-5 h-5 text-white/30 group-hover:text-blue-400 transition-smooth" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                  </svg>
+                </div>
+              </div>
+
+              <h4 className="font-serif text-2xl text-white/50 group-hover:text-white font-normal tracking-tight mb-2 transition-smooth">
+                Many more to come
+              </h4>
+              <p className="text-xs font-mono uppercase tracking-[0.18em] text-white/25 group-hover:text-white/50 transition-smooth max-w-[160px] leading-relaxed">
+                The team is growing
+              </p>
+
+              {/* Bottom border line */}
+              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            </div>
+          </StaggerItem>
         </StaggerContainer>
       </div>
     </section>

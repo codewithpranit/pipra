@@ -50,7 +50,7 @@ export default function Header() {
       }`}
     >
       <div className="container-pipra">
-        <div className="flex h-[4.5rem] sm:h-20 items-center justify-between gap-6">
+        <div className="flex h-[4.5rem] sm:h-20 lg:h-24 xl:h-28 items-center justify-between gap-6">
           {/* Logo */}
           <a
             href="#hero"

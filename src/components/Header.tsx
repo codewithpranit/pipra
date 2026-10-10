@@ -54,7 +54,7 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#hero"
-            className="flex items-center h-full group focus-visible:outline-2 focus-visible:outline-blue-500 rounded-sm"
+            className="flex items-center h-full overflow-hidden group focus-visible:outline-2 focus-visible:outline-blue-500 rounded-sm"
             aria-label="Pipra — Return to top"
           >
             <Image
@@ -63,7 +63,7 @@ export default function Header() {
               width={80}
               height={80}
               priority
-              className="h-full w-auto object-contain mix-blend-multiply transition-smooth group-hover:opacity-90"
+              className="h-full w-auto object-contain mix-blend-multiply transition-smooth group-hover:opacity-90 lg:scale-[1.2] xl:scale-[1.3] origin-center"
             />
           </a>
 

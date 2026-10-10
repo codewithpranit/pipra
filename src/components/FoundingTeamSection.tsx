@@ -19,6 +19,12 @@ const FOUNDER: TeamMember = {
 
 const FOUNDING_TEAM = [
   {
+    name: "Yashaswini Mohanty",
+    role: "Founding Team",
+    image: "/images/team/yashaswini-mohanty.png",
+    linkedin: "https://www.linkedin.com/in/yashaswinimohanty/",
+  },
+  {
     name: "Astitva Tiwari",
     role: "Founding Team",
     image: "/images/team/astitva-tiwari.png",
@@ -129,7 +135,7 @@ export default function FoundingTeamSection() {
         </div>
 
         {/* Founding team row */}
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-[1080px] mx-auto">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-[1200px] mx-auto">
           {FOUNDING_TEAM.map((member) => (
             <StaggerItem key={member.name}>
               <div className="group relative glass-card p-5 sm:p-7 text-center flex flex-col items-center hover:bg-white/12 transition-smooth shadow-lg overflow-hidden h-full">
